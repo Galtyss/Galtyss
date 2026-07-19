@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GALTYSS Â· Guidance Hub</title>
+<!-- Font Awesome for Instagram Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+/* --- Reset & Base --- */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: #05080f;
+color: #f0f4ff;
+overflow-x: hidden;
+}
+/* --- Animated Background Glow Orbs --- */
+.bg-orb {
+position: fixed;
+border-radius: 50%;
+filter: blur(120px);
+opacity: 0.3;
+z-index: 0;
+pointer-events: none;
+animation: orbFloat 20s infinite alternate ease-in-out;
+}
+.orb1 {
+width: 600px;
+height: 600px;
+background: #4facfe;
+top: -10%;
+left: -10%;
+}
+.orb2 {
+width: 500px;
+height: 500px;
+background: #f6d365;
+bottom: -10%;
+right: -10%;
+animation-delay: -8s;
+}
+.orb3 {
+width: 400px;
+height: 400px;
+background: #43e97b;
+top: 40%;
+left: 50%;
+animation-delay: -14s;
+}
+@keyframes orbFloat {
+0% {
+transform: translate(0, 0) scale(1);
+}
+100% {
+transform: translate(100px, 80px) scale(1.3);
+}
+}
+/* --- Floating Particles (smaller) --- */
+.floating-bg {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+pointer-events: none;
+overflow: hidden;
+}
+.float-object {
+position: absolute;
+border-radius: 50%;
+background: rgba(255, 255, 255, 0.03);
+border: 1px solid rgba(255, 255, 255, 0.05);
+animation: floatUp linear infinite;
+box-shadow: 0 0 40px rgba(100, 180, 255, 0.02);
+}
+.float-object.square {
+    border-radius: 4px;
+background: rgba(255, 200, 100, 0.02);
+border-color: rgba(255, 200, 100, 0.05);
+}
+.float-object.triangle {
+width: 0 !important;
+height: 0 !important;
+border-radius: 0 !important;
+background: transparent !important;
+border-left: 30px solid transparent;
+border-right: 30px solid transparent;
+border-bottom: 50px solid rgba(0, 255, 200, 0.02);
+border-top: none;
+}
+@keyframes floatUp {
+0% {
+transform: translateY(110vh) rotate(0deg) scale(0.5);
+opacity: 0;
+}
+15% {
+opacity: 0.5;
+}
+85% {
+opacity: 0.5;
+}
+100% {
+transform: translateY(-20vh) rotate(720deg) scale(1.5);
+opacity: 0;
+}
+}
+/* --- Main Content --- */
+.main-content {
+position: relative;
+z-index: 1;
+max-width: 1300px;
+margin: 0 auto;
+padding: 0 2rem 2rem;
+}
+/* --- GLASS NAVBAR --- */
+.navbar {
+position: sticky;
+top: 0;
+z-index: 100;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 2.5rem;
+margin: 1rem 0 2rem;
+background: rgba(5, 8, 15, 0.6);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border-radius: 80px;
+border: 1px solid rgba(255, 255, 255, 0.06);
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+flex-wrap: wrap;
+gap: 1rem;
+}
+.nav-logo {
+font-size: 2rem;
+font-weight: 900;
+background: linear-gradient(135deg, #a0d0ff, #b87aff, #f6d365);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+letter-spacing: -1px;
+text-shadow: 0 0 30px rgba(100, 100, 255, 0.2);
+animation: glowPulse 3s infinite alternate;
+}
+@keyframes glowPulse {
+0% {
+filter: drop-shadow(0 0 5px rgba(100, 180, 255, 0.3));
+}
+100% {
+filter: drop-shadow(0 0 20px rgba(184, 122, 255, 0.6));
+}
+}
+.nav-tagline {
+font-size: 0.85rem;
+color: #8899bb;
+letter-spacing: 1px;
+font-weight: 300;
+border-left: 1px solid rgba(255, 255, 255, 0.1);
+padding-left: 1.5rem;
+display: none;
+}
+.nav-cta {
+background: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.1);
+padding: 0.5rem 1.8rem;
+border-radius: 60px;
+color: #f0f4ff;
+text-decoration: none;
+font-weight: 600;
+font-size: 0.9rem;
+transition: all 0.3s;
+backdrop-filter: blur(4px);
+}
+.nav-cta:hover {
+background: rgba(255, 255, 255, 0.12);
+border-color: #4facfe;
+transform: scale(1.05);
+box-shadow: 0 0 25px rgba(79, 172, 254, 0.2);
+}
+/* --- Hero --- */
+.hero {
+min-height: 80vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 2rem 0 4rem;
+position: relative;
+}
+.hero h1 {
+font-size: clamp(4.5rem, 12vw, 8rem);
+font-weight: 900;
+background: linear-gradient(135deg, #a0d0ff, #b87aff, #f6d365, #43e97b);
+background-size: 300% 300%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+animation: gradientShift 6s ease-in-out infinite alternate;
+letter-spacing: -3px;
+line-height: 1;
+text-shadow: 0 0 80px rgba(100, 100, 255, 0.1);
+}
+@keyframes gradientShift {
+0% {
+background-position: 0% 50%;
+}
+100% {
+background-position: 100% 50%;
+}
+}
+.hero .tagline-main {
+font-size: clamp(1.2rem, 2.5vw, 2rem);
+color: #c8d8ff;
+max-width: 800px;
+margin: 1rem auto 0.5rem;
+font-weight: 300;
+letter-spacing: 3px;
+background: rgba(0, 0, 0, 0.2);
+padding: 0.5rem 2rem;
+border-radius: 60px;
+backdrop-filter: blur(4px);
+border: 1px solid rgba(255, 255, 255, 0.04);
+}
+/* --- Disclaimer --- */
+.disclaimer-box {
+max-width: 800px;
+margin: 2rem auto 3rem;
+padding: 1.2rem 2rem;
+background: rgba(255, 200, 100, 0.04);
+border: 1px solid rgba(255, 200, 100, 0.15);
+border-radius: 60px;
+backdrop-filter: blur(10px);
+display: flex;
+align-items: center;
+gap: 1rem;
+flex-wrap: wrap;
+justify-content: center;
+box-shadow: 0 0 40px rgba(255, 200, 100, 0.02);
+}
+.disclaimer-box i {
+    color: #f6d365;
+font-size: 1.4rem;
+}
+.disclaimer-box p {
+color: #b0c0dd;
+font-size: 0.95rem;
+font-weight: 300;
+margin: 0;
+}
+.disclaimer-box strong {
+color: #f0f4ff;
+font-weight: 600;
+}
+/* --- Scroll Down --- */
+.scroll-down {
+margin-top: 3rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+cursor: pointer;
+animation: bounceArrow 2.5s infinite;
+transition: transform 0.3s;
+}
+.scroll-down:hover {
+transform: scale(1.1);
+}
+.scroll-down .mouse {
+width: 26px;
+height: 42px;
+border: 2px solid #5a7ab0;
+border-radius: 13px;
+position: relative;
+display: flex;
+justify-content: center;
+}
+.scroll-down .mouse .wheel {
+width: 4px;
+height: 10px;
+background: #5a7ab0;
+border-radius: 2px;
+margin-top: 8px;
+animation: scrollWheel 1.8s infinite;
+}
+.scroll-down .arrow {
+margin-top: 8px;
+font-size: 1.8rem;
+color: #5a7ab0;
+line-height: 0;
+}
+@keyframes scrollWheel {
+0% {
+opacity: 1;
+transform: translateY(0);
+}
+100% {
+opacity: 0;
+transform: translateY(14px);
+}
+}
+@keyframes bounceArrow {
+0%,
+100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(10px);
+}
+}
+/* --- Mentors Section --- */
+.mentors-section {
+padding: 3rem 0 4rem;
+border-top: 1px solid rgba(255, 255, 255, 0.03);
+margin-top: 2rem;
+}
+.mentors-section h2 {
+text-align: center;
+font-size: 2.8rem;
+font-weight: 600;
+margin-bottom: 3.5rem;
+background: linear-gradient(135deg, #f0f4ff, #8899cc);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+.mentors-grid {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 2.5rem;
+}
+/* --- Individual Mentor Card (Ultra Attractive) --- */
+.mentor-card {
+flex: 1 1 300px;
+max-width: 360px;
+background: rgba(255, 255, 255, 0.02);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.06);
+border-radius: 32px;
+padding: 2rem 1.8rem 2.2rem;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+display: flex;
+flex-direction: column;
+position: relative;
+overflow: hidden;
+transform-style: preserve-3d;
+}
+.mentor-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+border-radius: 32px 32px 0 0;
+background: linear-gradient(90deg, #4facfe, #00f2fe);
+z-index: 2;
+}
+.mentor-card::after {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03), transparent 70%);
+opacity: 0;
+transition: opacity 0.6s;
+pointer-events: none;
+}
+.mentor-card:hover::after {
+opacity: 1;
+}
+.mentor-card:hover {
+transform: translateY(-16px) scale(1.01);
+border-color: rgba(255, 255, 255, 0.15);
+box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+}
+/* Card Themes */
+.card-sahil::before {
+    background: linear-gradient(90deg, #43e97b, #38f9d7);
+}
+.card-sahil .mentor-name {
+    color: #43e97b;
+}
+.card-sahil .skill-tag {
+    border-color: rgba(67, 233, 123, 0.2);
+color: #8dffb0;
+}
+.card-sahil .skill-tag:hover {
+    background: rgba(67, 233, 123, 0.15);
+border-color: #43e97b;
+}
+.card-sahil .btn-contact {
+    background: linear-gradient(135deg, #43e97b, #2bc48a);
+box-shadow: 0 8px 25px rgba(67, 233, 123, 0.3);
+}
+.card-sahil .btn-contact:hover {
+    box-shadow: 0 12px 40px rgba(67, 233, 123, 0.6);
+}
+.card-manish::before {
+background: linear-gradient(90deg, #43e97b, #38f9d7);
+}
+.card-manish .mentor-name {
+color: #43e97b;
+}
+.card-manish .skill-tag {
+border-color: rgba(67, 233, 123, 0.2);
+color: #8dffb0;
+}
+.card-manish .skill-tag:hover {
+background: rgba(67, 233, 123, 0.15);
+border-color: #43e97b;
+}
+.card-manish .btn-contact {
+background: linear-gradient(135deg, #43e97b, #2bc48a);
+box-shadow: 0 8px 25px rgba(67, 233, 123, 0.3);
+}
+.card-manish .btn-contact:hover {
+box-shadow: 0 12px 40px rgba(67, 233, 123, 0.6);
+}
+.card-parth::before {
+    background: linear-gradient(90deg, #43e97b, #38f9d7);
+}
+.card-parth .mentor-name {
+    color: #43e97b;
+}
+.card-parth .skill-tag {
+    border-color: rgba(67, 233, 123, 0.2);
+color: #8dffb0;
+}
+.card-parth .skill-tag:hover {
+    background: rgba(67, 233, 123, 0.15);
+border-color: #43e97b;
+}
+.card-parth .btn-contact {
+    background: linear-gradient(135deg, #43e97b, #2bc48a);
+box-shadow: 0 8px 25px rgba(67, 233, 123, 0.3);
+}
+.card-parth .btn-contact:hover {
+    box-shadow: 0 12px 40px rgba(67, 233, 123, 0.6);
+}
+.card-parth .rank-badge {
+background: linear-gradient(135deg, #f6d365, #fda085);
+color: #1a1f2f;
+font-weight: 800;
+padding: 0.2rem 0.8rem;
+border-radius: 40px;
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+display: inline-block;
+margin: 0.2rem 0.1rem;
+border: 1px solid rgba(255, 215, 0, 0.3);
+box-shadow: 0 0 30px rgba(246, 211, 101, 0.15);
+}
+.mentor-card .emoji-big {
+font-size: 3rem;
+margin-bottom: 0.2rem;
+}
+.mentor-name {
+font-size: 2.2rem;
+font-weight: 700;
+margin-bottom: 0.1rem;
+letter-spacing: -0.5px;
+}
+.mentor-title {
+font-size: 0.8rem;
+color: #7a8db0;
+text-transform: uppercase;
+letter-spacing: 2px;
+border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+padding-bottom: 0.8rem;
+margin-bottom: 1rem;
+}
+.skills-container {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+margin: 0.5rem 0 1.5rem;
+flex: 1;
+}
+.skill-tag {
+background: rgba(255, 255, 255, 0.02);
+border: 1px solid rgba(255, 255, 255, 0.06);
+padding: 0.4rem 0.9rem;
+border-radius: 40px;
+font-size: 0.8rem;
+text-align: center;
+transition: all 0.3s;
+font-weight: 400;
+backdrop-filter: blur(4px);
+letter-spacing: 0.3px;
+}
+.achievement-area {
+margin: 0.5rem 0 1.2rem;
+display: flex;
+flex-wrap: wrap;
+gap: 0.4rem;
+}
+.btn-contact {
+display: inline-block;
+padding: 0.8rem 0;
+border-radius: 60px;
+color: #fff;
+font-weight: 700;
+font-size: 1rem;
+text-decoration: none;
+border: none;
+cursor: pointer;
+transition: all 0.3s;
+text-align: center;
+width: 100%;
+letter-spacing: 0.5px;
+margin-top: 0.5rem;
+}
+.btn-contact:hover {
+transform: scale(1.04);
+}
+/* --- Instagram & Thank You Section --- */
+.social-section {
+margin: 5rem 0 3rem;
+padding: 3.5rem 2rem;
+background: rgba(255, 255, 255, 0.02);
+border-radius: 60px;
+border: 1px solid rgba(255, 255, 255, 0.04);
+text-align: center;
+backdrop-filter: blur(10px);
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+position: relative;
+overflow: hidden;
+}
+.social-section::before {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: conic-gradient(from 0deg, transparent, rgba(79, 172, 254, 0.03), transparent, rgba(246, 211,
+101, 0.03), transparent);
+animation: spinGlow 20s linear infinite;
+}
+@keyframes spinGlow {
+100% {
+transform: rotate(360deg);
+}
+}
+.social-section * {
+position: relative;
+z-index: 2;
+}
+.social-section h3 {
+font-size: 2.2rem;
+font-weight: 600;
+margin-bottom: 0.5rem;
+}
+.social-section p {
+color: #8899bb;
+font-size: 1.1rem;
+margin-bottom: 2rem;
+}
+.btn-instagram {
+display: inline-flex;
+align-items: center;
+gap: 1rem;
+padding: 1rem 3.5rem;
+border-radius: 60px;
+background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%,
+#285AEB 90%);
+color: #fff;
+font-weight: 800;
+font-size: 1.3rem;
+text-decoration: none;
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+box-shadow: 0 10px 40px rgba(214, 36, 159, 0.3);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.btn-instagram i {
+font-size: 2rem;
+}
+.btn-instagram:hover {
+transform: translateY(-6px) scale(1.05);
+box-shadow: 0 20px 60px rgba(214, 36, 159, 0.5);
+}
+/* --- Footer / Thank You --- */
+.footer {
+margin-top: 2rem;
+padding: 3rem 0 2rem;
+border-top: 1px solid rgba(255, 255, 255, 0.03);
+text-align: center;
+}
+.footer .thank-you {
+font-size: 2rem;
+font-weight: 300;
+letter-spacing: 4px;
+color: #c8d8ff;
+margin-bottom: 0.5rem;
+}
+.footer .thank-you i {
+color: #f6d365;
+margin: 0 0.5rem;
+}
+.footer .copyright {
+color: #4a5f85;
+font-size: 0.9rem;
+letter-spacing: 1px;
+}
+.back-top {
+display: inline-block;
+margin-top: 1.5rem;
+padding: 0.5rem 2rem;
+border: 1px solid rgba(255, 255, 255, 0.06);
+border-radius: 60px;
+color: #5a7ab0;
+text-decoration: none;
+font-size: 0.85rem;
+transition: all 0.3s;
+}
+.back-top:hover {
+background: rgba(255, 255, 255, 0.04);
+border-color: #4facfe;
+color: #fff;
+}
+/* --- Responsive --- */
+@media (max-width: 768px) {
+.navbar {
+flex-direction: column;
+align-items: center;
+border-radius: 40px;
+padding: 1rem 1.5rem;
+margin: 0.5rem;
+}
+.nav-tagline {
+border-left: none;
+padding-left: 0;
+font-size: 0.7rem;
+text-align: center;
+}
+.hero h1 {
+font-size: 4rem;
+}
+.mentor-card {
+flex: 1 1 100%;
+max-width: 420px;
+}
+.mentors-section h2 {
+font-size: 2rem;
+}
+.social-section h3 {
+font-size: 1.8rem;
+}
+.btn-instagram {
+font-size: 1rem;
+padding: 0.8rem 2rem;
+}
+.disclaimer-box {
+    border-radius: 30px;
+padding: 1rem 1.5rem;
+}
+}
+@media (max-width: 480px) {
+.main-content {
+padding: 0 1rem 2rem;
+}
+.hero h1 {
+font-size: 3.2rem;
+}
+.mentor-card {
+padding: 1.5rem;
+}
+.skill-tag {
+font-size: 0.7rem;
+padding: 0.3rem 0.7rem;
+}
+}
+</style>
+</head>
+<body>
+<!-- BACKGROUND EFFECTS -->
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
+<div class="floating-bg" id="floatingBg"></div>
+<!-- MAIN CONTENT -->
+<div class="main-content">
+<!-- NAVBAR -->
+<nav class="navbar" id="top">
+<div class="nav-logo">GALTYSS</div>
+<div class="nav-tagline">Guidance & learning through your smart seniors</div>
+<a href="#mentors" class="nav-cta">Meet Mentors</a>
+</nav>
+<!-- HERO -->
+<section class="hero" id="home">
+<h1>GALTYSS</h1>
+<p class="tagline-main">âœ¨ Guidance and learning through your smart seniors âœ¨</p>
+<!-- DISCLAIMER -->
+<div class="disclaimer-box">
+    <i class="fas fa-info-circle"></i>
+    <p><strong>Heads up!</strong> Our mentors are experienced seniors, not certified experts. They're
+    here to guide, support, and share their journey with you!</p>
+    </div>
+    <div class="scroll-down"
+    onclick="document.getElementById('mentors').scrollIntoView({behavior:'smooth'})">
+    <div class="mouse"><div class="wheel"></div></div>
+    <div class="arrow">âŒ„</div>
+    <span style="font-size:0.8rem;color:#4a6090;margin-top:4px;">Scroll to explore</span>
+    </div>
+    </section>
+    <!-- MENTORS -->
+    <section class="mentors-section" id="mentors">
+    <h2>ðŸŒŸ Meet Your 3 Senior Mentors</h2>
+    <div class="mentors-grid">
+    <!-- SAHIL -->
+    <div class="mentor-card card-sahil">
+    <div class="emoji-big">ðŸ’»</div>
+    <div class="mentor-name">Sahil</div>
+    <div class="mentor-title">âš¡ Tech & Business</div>
+    <div class="skills-container">
+    <span class="skill-tag">ðŸŒ Web Designer</span>
+    <span class="skill-tag">âš¡ C++ Language</span>
+    <span class="skill-tag">ðŸ Python</span>
+    <span class="skill-tag">ðŸ“Š Accountancy</span>
+    <span class="skill-tag">ðŸ“ˆ Economics</span>
+    <span class="skill-tag">ðŸ’¼ Business</span>
+    <span class="skill-tag">ðŸ’ª Fitness</span>
+    </div>
+    <a href="sahilchand876@gmail.com"
+     class="btn-contact">
+    âœ‰ï¸ Contact Sahil
+    </a>
+    </div>
+    <!-- MANISH -->
+    <div class="mentor-card card-manish">
+    <div class="emoji-big">ðŸ§˜</div>
+    <div class="mentor-name">Manish</div>
+    <div class="mentor-title">ðŸŒ¿ Wellness & Biology</div>
+    <div class="skills-container">
+        <span class="skill-tag">ðŸ§¬ Biology</span>
+        <span class="skill-tag">ðŸ’ª Fitness</span>
+        <span class="skill-tag">ðŸ¤¸ Flexibility</span>
+        <span class="skill-tag">ðŸ§˜ Yoga</span>
+        <span class="skill-tag">ðŸ§  Meditation</span>
+        <span class="skill-tag">ðŸ§© Problem Solving</span>
+        <span class="skill-tag">ðŸ”¥ Motivation</span>
+        </div>
+        <a href="bairaginmanish@gmail.com"
+        class="btn-contact">
+        âœ‰ï¸ Contact Manish
+        </a>
+        </div>
+        <!-- PARTH -->
+        <div class="mentor-card card-parth">
+        <div class="emoji-big">ðŸ†</div>
+        <div class="mentor-name">Parth</div>
+        <div class="mentor-title">ðŸ“ Math & Physics Genius</div>
+        <div class="achievement-area">
+        <span class="rank-badge">ðŸ… All India Rank 49 Â· INMO</span>
+        <span class="rank-badge">ðŸ¥‡ State Rank 1 Â· Math</span>
+        </div>
+        <div class="skills-container">
+        <span class="skill-tag">ðŸ“ Advanced Math</span>
+        <span class="skill-tag">âš›ï¸ Intermediate Physics</span>
+        <span class="skill-tag">ðŸ§© Problem Solving</span>
+        </div>
+        <a href="mailto:part@gmail.com?subject=Guidance%20Request%20for%20Parth" class="btn-contact">
+        âœ‰ï¸ Contact Parth
+        </a>
+        </div>
+        </div>
+        </section>
+        <!-- INSTAGRAM & THANK YOU -->
+        <section class="social-section" id="contact">
+        <h3>ðŸ“¸ Stay Connected</h3>
+        <p>Follow us for daily tips, updates, and mentorship content!</p>
+        <a href="https://instagram.com/GALTYSS" target="_blank" class="btn-instagram">
+        <i class="fab fa-instagram"></i> Follow us @GALTYSS
+        </a>
+        </section>
+        <!-- FOOTER -->
+<footer class="footer">
+    <div class="thank-you">
+    <i class="fas fa-heart"></i> Thank You for Visiting! <i class="fas fa-heart"></i>
+    </div>
+    <p class="copyright">Â© 2026 GALTYSS â€” Guidance and learning through your smart seniors.</p>
+    <a href="#top" class="back-top">â¬† Back to Top</a>
+    </footer>
+    </div>
+    <script>
+    // --- Generate Floating Particles ---
+    (function createFloatingShapes() {
+    const container = document.getElementById('floatingBg');
+    const shapes = ['circle', 'square', 'triangle'];
+    for (let i = 0; i < 35; i++) {
+    const el = document.createElement('div');
+    const type = shapes[Math.floor(Math.random() * shapes.length)];
+    let size = 25 + Math.floor(Math.random() * 70);
+    let left = Math.random() * 95;
+    let duration = 20 + Math.random() * 40;
+    let delay = Math.random() * 25;
+    el.className = `float-object ${type}`;
+    if (type === 'circle') {
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+    } else if (type === 'square') {
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+    } else if (type === 'triangle') {
+    const triSize = 20 + Math.floor(Math.random() * 40);
+    el.style.borderLeft = triSize + 'px solid transparent';
+    el.style.borderRight = triSize + 'px solid transparent';
+    el.style.borderBottom = (triSize * 1.5) + 'px solid rgba(255,200,100,0.03)';
+    el.style.width = '0';
+    el.style.height = '0';
+    el.style.background = 'transparent';
+    el.style.borderTop = 'none';
+    }
+    el.style.left = left + '%';
+    el.style.animationDuration = duration + 's';
+    el.style.animationDelay = delay + 's';
+    el.style.opacity = '0';
+container.appendChild(el);
+}
+})();
+</script>
+</body>
+</html>
