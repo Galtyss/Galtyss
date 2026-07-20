@@ -222,7 +222,7 @@ body {
 }
 
 /* ============================================================
-   FLOATING PARTICLES
+   FLOATING PARTICLES (Small background shapes)
    ============================================================ */
 .floating-bg {
     position: fixed;
@@ -303,8 +303,8 @@ body {
     animation: glowPulse 3s infinite alternate;
 }
 @keyframes glowPulse {
-    0% { filter: drop-shadow(0 0 5px var(--glow-pulse, rgba(100,180,255,0.3))); }
-    100% { filter: drop-shadow(0 0 20px var(--glow-pulse2, rgba(184,122,255,0.6))); }
+    0% { filter: drop-shadow(0 0 5px var(--btn-shadow)); }
+    100% { filter: drop-shadow(0 0 20px var(--btn-shadow)); }
 }
 .nav-tagline {
     font-size: 0.85rem;
@@ -713,7 +713,7 @@ body {
 .back-top:hover { background: var(--bg-card); border-color: var(--accent-blue); color: var(--text-primary); }
 
 /* ============================================================
-   CUTE FLOATING ELEMENTS (PINK THEME)
+   FLOATING CUTE OBJECTS (EVERY THEME!)
    ============================================================ */
 .cute-float {
     position: fixed;
@@ -721,18 +721,93 @@ body {
     opacity: 0;
     pointer-events: none;
     z-index: 0;
-    transition: opacity 1.5s ease;
+    transition: opacity 1.5s ease, transform 0.5s ease;
 }
+
+/* Default Theme - Stars & Sparkles */
+[data-theme="default"] .cute-float {
+    opacity: 0.4;
+    animation: cuteFloat 14s infinite alternate ease-in-out;
+}
+[data-theme="default"] .cute-float:nth-child(1) { top: 8%; left: 3%; animation-duration: 15s; }
+[data-theme="default"] .cute-float:nth-child(2) { top: 18%; right: 5%; animation-duration: 17s; animation-delay: -3s; }
+[data-theme="default"] .cute-float:nth-child(3) { bottom: 12%; left: 6%; animation-duration: 19s; animation-delay: -6s; }
+[data-theme="default"] .cute-float:nth-child(4) { bottom: 20%; right: 4%; animation-duration: 16s; animation-delay: -9s; }
+[data-theme="default"] .cute-float:nth-child(5) { top: 45%; left: 1%; animation-duration: 21s; animation-delay: -2s; }
+[data-theme="default"] .cute-float:nth-child(6) { top: 35%; right: 1%; animation-duration: 18s; animation-delay: -5s; }
+
+/* Pink Theme - Cute Teddy & Cats */
 [data-theme="pink"] .cute-float {
     opacity: 0.5;
     animation: cuteFloat 14s infinite alternate ease-in-out;
 }
-.cute-float:nth-child(1) { top: 8%; left: 3%; animation-duration: 15s; }
-.cute-float:nth-child(2) { top: 18%; right: 5%; animation-duration: 17s; animation-delay: -3s; }
-.cute-float:nth-child(3) { bottom: 12%; left: 6%; animation-duration: 19s; animation-delay: -6s; }
-.cute-float:nth-child(4) { bottom: 20%; right: 4%; animation-duration: 16s; animation-delay: -9s; }
-.cute-float:nth-child(5) { top: 45%; left: 1%; animation-duration: 21s; animation-delay: -2s; }
-.cute-float:nth-child(6) { top: 35%; right: 1%; animation-duration: 18s; animation-delay: -5s; }
+[data-theme="pink"] .cute-float:nth-child(1) { top: 8%; left: 3%; animation-duration: 15s; }
+[data-theme="pink"] .cute-float:nth-child(2) { top: 18%; right: 5%; animation-duration: 17s; animation-delay: -3s; }
+[data-theme="pink"] .cute-float:nth-child(3) { bottom: 12%; left: 6%; animation-duration: 19s; animation-delay: -6s; }
+[data-theme="pink"] .cute-float:nth-child(4) { bottom: 20%; right: 4%; animation-duration: 16s; animation-delay: -9s; }
+[data-theme="pink"] .cute-float:nth-child(5) { top: 45%; left: 1%; animation-duration: 21s; animation-delay: -2s; }
+[data-theme="pink"] .cute-float:nth-child(6) { top: 35%; right: 1%; animation-duration: 18s; animation-delay: -5s; }
+
+/* Ocean Theme - Marine Life */
+[data-theme="ocean"] .cute-float {
+    opacity: 0.5;
+    animation: cuteFloat 15s infinite alternate ease-in-out;
+}
+[data-theme="ocean"] .cute-float:nth-child(1) { top: 8%; left: 3%; animation-duration: 16s; }
+[data-theme="ocean"] .cute-float:nth-child(2) { top: 18%; right: 5%; animation-duration: 18s; animation-delay: -3s; }
+[data-theme="ocean"] .cute-float:nth-child(3) { bottom: 12%; left: 6%; animation-duration: 20s; animation-delay: -6s; }
+[data-theme="ocean"] .cute-float:nth-child(4) { bottom: 20%; right: 4%; animation-duration: 17s; animation-delay: -9s; }
+[data-theme="ocean"] .cute-float:nth-child(5) { top: 45%; left: 1%; animation-duration: 22s; animation-delay: -2s; }
+[data-theme="ocean"] .cute-float:nth-child(6) { top: 35%; right: 1%; animation-duration: 19s; animation-delay: -5s; }
+
+/* Forest Theme - Nature */
+[data-theme="forest"] .cute-float {
+    opacity: 0.5;
+    animation: cuteFloat 16s infinite alternate ease-in-out;
+}
+[data-theme="forest"] .cute-float:nth-child(1) { top: 8%; left: 3%; animation-duration: 17s; }
+[data-theme="forest"] .cute-float:nth-child(2) { top: 18%; right: 5%; animation-duration: 19s; animation-delay: -3s; }
+[data-theme="forest"] .cute-float:nth-child(3) { bottom: 12%; left: 6%; animation-duration: 21s; animation-delay: -6s; }
+[data-theme="forest"] .cute-float:nth-child(4) { bottom: 20%; right: 4%; animation-duration: 18s; animation-delay: -9s; }
+[data-theme="forest"] .cute-float:nth-child(5) { top: 45%; left: 1%; animation-duration: 23s; animation-delay: -2s; }
+[data-theme="forest"] .cute-float:nth-child(6) { top: 35%; right: 1%; animation-duration: 20s; animation-delay: -5s; }
+
+/* Sunset Theme - Tropical */
+[data-theme="sunset"] .cute-float {
+    opacity: 0.5;
+    animation: cuteFloat 15s infinite alternate ease-in-out;
+}
+[data-theme="sunset"] .cute-float:nth-child(1) { top: 8%; left: 3%; animation-duration: 16s; }
+[data-theme="sunset"] .cute-float:nth-child(2) { top: 18%; right: 5%; animation-duration: 18s; animation-delay: -3s; }
+[data-theme="sunset"] .cute-float:nth-child(3) { bottom: 12%; left: 6%; animation-duration: 20s; animation-delay: -6s; }
+[data-theme="sunset"] .cute-float:nth-child(4) { bottom: 20%; right: 4%; animation-duration: 17s; animation-delay: -9s; }
+[data-theme="sunset"] .cute-float:nth-child(5) { top: 45%; left: 1%; animation-duration: 22s; animation-delay: -2s; }
+[data-theme="sunset"] .cute-float:nth-child(6) { top: 35%; right: 1%; animation-duration: 19s; animation-delay: -5s; }
+
+/* Lavender Theme - Dreamy */
+[data-theme="lavender"] .cute-float {
+    opacity: 0.5;
+    animation: cuteFloat 16s infinite alternate ease-in-out;
+}
+[data-theme="lavender"] .cute-float:nth-child(1) { top: 8%; left: 3%; animation-duration: 17s; }
+[data-theme="lavender"] .cute-float:nth-child(2) { top: 18%; right: 5%; animation-duration: 19s; animation-delay: -3s; }
+[data-theme="lavender"] .cute-float:nth-child(3) { bottom: 12%; left: 6%; animation-duration: 21s; animation-delay: -6s; }
+[data-theme="lavender"] .cute-float:nth-child(4) { bottom: 20%; right: 4%; animation-duration: 18s; animation-delay: -9s; }
+[data-theme="lavender"] .cute-float:nth-child(5) { top: 45%; left: 1%; animation-duration: 23s; animation-delay: -2s; }
+[data-theme="lavender"] .cute-float:nth-child(6) { top: 35%; right: 1%; animation-duration: 20s; animation-delay: -5s; }
+
+/* Golden Theme - Luxurious */
+[data-theme="golden"] .cute-float {
+    opacity: 0.5;
+    animation: cuteFloat 15s infinite alternate ease-in-out;
+}
+[data-theme="golden"] .cute-float:nth-child(1) { top: 8%; left: 3%; animation-duration: 16s; }
+[data-theme="golden"] .cute-float:nth-child(2) { top: 18%; right: 5%; animation-duration: 18s; animation-delay: -3s; }
+[data-theme="golden"] .cute-float:nth-child(3) { bottom: 12%; left: 6%; animation-duration: 20s; animation-delay: -6s; }
+[data-theme="golden"] .cute-float:nth-child(4) { bottom: 20%; right: 4%; animation-duration: 17s; animation-delay: -9s; }
+[data-theme="golden"] .cute-float:nth-child(5) { top: 45%; left: 1%; animation-duration: 22s; animation-delay: -2s; }
+[data-theme="golden"] .cute-float:nth-child(6) { top: 35%; right: 1%; animation-duration: 19s; animation-delay: -5s; }
+
 @keyframes cuteFloat {
     0% { transform: translate(0,0) rotate(0deg) scale(1); }
     25% { transform: translate(25px,-35px) rotate(15deg) scale(1.1); }
@@ -778,13 +853,13 @@ body {
 </head>
 <body>
 
-<!-- ===== CUTE FLOATING ELEMENTS (ONLY VISIBLE IN PINK THEME) ===== -->
-<div class="cute-float">🐻</div>
-<div class="cute-float">🐱</div>
-<div class="cute-float">🎀</div>
-<div class="cute-float">🌸</div>
-<div class="cute-float">🐾</div>
-<div class="cute-float">💖</div>
+<!-- ===== FLOATING CUTE OBJECTS (CHANGE WITH THEME) ===== -->
+<div class="cute-float">⭐</div>
+<div class="cute-float">✨</div>
+<div class="cute-float">🚀</div>
+<div class="cute-float">💫</div>
+<div class="cute-float">🌟</div>
+<div class="cute-float">🔥</div>
 
 <!-- ===== BACKGROUND EFFECTS ===== -->
 <div class="bg-orb orb1"></div>
@@ -950,18 +1025,41 @@ body {
         }
     })();
 
+    // --- Update floating emojis based on theme ---
+    function updateFloatingEmojis(theme) {
+        const floats = document.querySelectorAll('.cute-float');
+        const emojiSets = {
+            default: ['⭐', '✨', '🚀', '💫', '🌟', '🔥'],
+            pink: ['🐻', '🐱', '🎀', '🌸', '🐾', '💖'],
+            ocean: ['🐠', '🌊', '🐚', '⛵', '🐟', '🌅'],
+            forest: ['🌿', '🌳', '🍃', '🌺', '🦋', '🌲'],
+            sunset: ['🌅', '☀️', '🌴', '🌺', '🏖️', '🌞'],
+            lavender: ['💜', '✨', '🌙', '🌸', '🦋', '🌟'],
+            golden: ['🌟', '✨', '💛', '👑', '🌞', '🏆']
+        };
+        
+        const emojis = emojiSets[theme] || emojiSets.default;
+        floats.forEach((el, index) => {
+            if (index < emojis.length) {
+                el.textContent = emojis[index];
+            }
+        });
+    }
+
     // --- Theme Switcher ---
     function setTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('galtyss-theme', theme);
         document.querySelectorAll('.theme-dot').forEach(dot => dot.classList.remove('active'));
         document.querySelector(`.theme-dot.${theme}`).classList.add('active');
+        updateFloatingEmojis(theme);
     }
 
     // --- Load saved theme ---
     document.addEventListener('DOMContentLoaded', function() {
         const saved = localStorage.getItem('galtyss-theme') || 'default';
         setTheme(saved);
+        updateFloatingEmojis(saved);
     });
 </script>
 
