@@ -1,5 +1,3 @@
-
-        
 <!DOCTYPE html>
 <html lang="en" data-theme="default">
 <head>
@@ -10,7 +8,7 @@
 <style>
 /* ============================================================
    RESET & BASE
-   =========================================================== */
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -224,7 +222,7 @@ body {
 }
 
 /* ============================================================
-   FLOATING PARTICLES (Small background shapes)
+   FLOATING PARTICLES
    ============================================================ */
 .floating-bg {
     position: fixed;
@@ -663,9 +661,7 @@ body {
     box-shadow: 0 12px 40px var(--btn-shadow);
 }
 
-/* ============================================================
-   SAHIL / GREAT HORNED OWL - BLUE
-   ============================================================ */
+/* SAHIL / GREAT HORNED OWL - BLUE */
 .card-sahil .card-bg-overlay { background: rgba(0, 10, 30, 0.7); }
 .card-sahil::before { background: linear-gradient(90deg, #4facfe, #00f2fe); }
 .card-sahil .mentor-name { color: #4facfe; }
@@ -674,9 +670,7 @@ body {
 .card-sahil .btn-contact { background: linear-gradient(135deg, #4facfe, #0099ff); box-shadow: 0 8px 25px rgba(79,172,254,0.3); }
 .card-sahil .btn-contact:hover { box-shadow: 0 12px 40px rgba(79,172,254,0.6); }
 
-/* ============================================================
-   MANISH / RAZORBILL - GREEN
-   ============================================================ */
+/* MANISH / RAZORBILL - GREEN */
 .card-manish .card-bg-overlay { background: rgba(0, 20, 10, 0.7); }
 .card-manish::before { background: linear-gradient(90deg, #43e97b, #38f9d7); }
 .card-manish .mentor-name { color: #43e97b; }
@@ -685,9 +679,7 @@ body {
 .card-manish .btn-contact { background: linear-gradient(135deg, #43e97b, #2bc48a); box-shadow: 0 8px 25px rgba(67,233,123,0.3); }
 .card-manish .btn-contact:hover { box-shadow: 0 12px 40px rgba(67,233,123,0.6); }
 
-/* ============================================================
-   PARTH / SHOEBILL - GOLD
-   ============================================================ */
+/* PARTH / SHOEBILL - GOLD */
 .card-parth .card-bg-overlay { background: rgba(30, 20, 0, 0.7); }
 .card-parth::before { background: linear-gradient(90deg, #f6d365, #fda085); }
 .card-parth .mentor-name { color: #f6d365; }
@@ -778,7 +770,7 @@ body {
 .back-top:hover { background: var(--bg-card); border-color: var(--accent-blue); color: var(--text-primary); }
 
 /* ============================================================
-   FLOATING CUTE OBJECTS (SPREAD OUT)
+   FLOATING CUTE OBJECTS (FIXED - SPREAD OUT)
    ============================================================ */
 .cute-float {
     position: fixed;
@@ -789,29 +781,131 @@ body {
     transition: opacity 1.5s ease;
 }
 
+/* DEFAULT THEME - Stars & Sparkles */
 [data-theme="default"] .cute-float {
-    opacity: 0.3;
+    opacity: 0.35;
     animation: cuteFloat 18s infinite alternate ease-in-out;
 }
-[data-theme="default"] .cute-float:nth-child(1) { top: 2%; left: 2%; animation-duration: 20s; }
-[data-theme="default"] .cute-float:nth-child(2) { top: 8%; right: 3%; animation-duration: 22s; animation-delay: -4s; }
-[data-theme="default"] .cute-float:nth-child(3) { bottom: 5%; left: 4%; animation-duration: 24s; animation-delay: -8s; }
-[data-theme="default"] .cute-float:nth-child(4) { bottom: 12%; right: 2%; animation-duration: 21s; animation-delay: -12s; }
-[data-theme="default"] .cute-float:nth-child(5) { top: 35%; left: 1%; animation-duration: 26s; animation-delay: -2s; }
-[data-theme="default"] .cute-float:nth-child(6) { top: 25%; right: 1%; animation-duration: 23s; animation-delay: -6s; }
-[data-theme="default"] .cute-float:nth-child(7) { top: 50%; left: 7%; animation-duration: 25s; animation-delay: -10s; }
-[data-theme="default"] .cute-float:nth-child(8) { bottom: 20%; right: 7%; animation-duration: 19s; animation-delay: -14s; }
-[data-theme="default"] .cute-float:nth-child(9) { top: 65%; left: 2%; animation-duration: 27s; animation-delay: -3s; }
-[data-theme="default"] .cute-float:nth-child(10) { top: 75%; right: 4%; animation-duration: 20s; animation-delay: -9s; }
-[data-theme="default"] .cute-float:nth-child(11) { bottom: 35%; left: 9%; animation-duration: 22s; animation-delay: -11s; }
-[data-theme="default"] .cute-float:nth-child(12) { bottom: 45%; right: 9%; animation-duration: 18s; animation-delay: -15s; }
+[data-theme="default"] .cute-float:nth-child(1) { top: 3%; left: 2%; animation-duration: 20s; animation-delay: 0s; }
+[data-theme="default"] .cute-float:nth-child(2) { top: 12%; right: 4%; animation-duration: 22s; animation-delay: -3s; }
+[data-theme="default"] .cute-float:nth-child(3) { bottom: 8%; left: 5%; animation-duration: 24s; animation-delay: -6s; }
+[data-theme="default"] .cute-float:nth-child(4) { bottom: 15%; right: 3%; animation-duration: 21s; animation-delay: -9s; }
+[data-theme="default"] .cute-float:nth-child(5) { top: 40%; left: 1%; animation-duration: 26s; animation-delay: -2s; }
+[data-theme="default"] .cute-float:nth-child(6) { top: 28%; right: 1%; animation-duration: 23s; animation-delay: -5s; }
+[data-theme="default"] .cute-float:nth-child(7) { top: 55%; left: 8%; animation-duration: 25s; animation-delay: -8s; }
+[data-theme="default"] .cute-float:nth-child(8) { bottom: 25%; right: 7%; animation-duration: 19s; animation-delay: -11s; }
+[data-theme="default"] .cute-float:nth-child(9) { top: 70%; left: 2%; animation-duration: 27s; animation-delay: -4s; }
+[data-theme="default"] .cute-float:nth-child(10) { top: 80%; right: 5%; animation-duration: 20s; animation-delay: -7s; }
+[data-theme="default"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 22s; animation-delay: -10s; }
+[data-theme="default"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 18s; animation-delay: -13s; }
 
-[data-theme="pink"] .cute-float { opacity: 0.35; animation: cuteFloat 17s infinite alternate ease-in-out; }
-[data-theme="ocean"] .cute-float { opacity: 0.3; animation: cuteFloat 19s infinite alternate ease-in-out; }
-[data-theme="forest"] .cute-float { opacity: 0.3; animation: cuteFloat 18s infinite alternate ease-in-out; }
-[data-theme="sunset"] .cute-float { opacity: 0.3; animation: cuteFloat 17s infinite alternate ease-in-out; }
-[data-theme="lavender"] .cute-float { opacity: 0.3; animation: cuteFloat 18s infinite alternate ease-in-out; }
-[data-theme="golden"] .cute-float { opacity: 0.3; animation: cuteFloat 17s infinite alternate ease-in-out; }
+/* PINK THEME - Teddy Bears & Cute Stuff */
+[data-theme="pink"] .cute-float {
+    opacity: 0.4;
+    animation: cuteFloat 16s infinite alternate ease-in-out;
+}
+[data-theme="pink"] .cute-float:nth-child(1) { top: 3%; left: 2%; animation-duration: 18s; animation-delay: 0s; }
+[data-theme="pink"] .cute-float:nth-child(2) { top: 12%; right: 4%; animation-duration: 20s; animation-delay: -4s; }
+[data-theme="pink"] .cute-float:nth-child(3) { bottom: 8%; left: 5%; animation-duration: 22s; animation-delay: -8s; }
+[data-theme="pink"] .cute-float:nth-child(4) { bottom: 15%; right: 3%; animation-duration: 19s; animation-delay: -12s; }
+[data-theme="pink"] .cute-float:nth-child(5) { top: 40%; left: 1%; animation-duration: 24s; animation-delay: -2s; }
+[data-theme="pink"] .cute-float:nth-child(6) { top: 28%; right: 1%; animation-duration: 21s; animation-delay: -6s; }
+[data-theme="pink"] .cute-float:nth-child(7) { top: 55%; left: 8%; animation-duration: 23s; animation-delay: -10s; }
+[data-theme="pink"] .cute-float:nth-child(8) { bottom: 25%; right: 7%; animation-duration: 17s; animation-delay: -14s; }
+[data-theme="pink"] .cute-float:nth-child(9) { top: 70%; left: 2%; animation-duration: 25s; animation-delay: -3s; }
+[data-theme="pink"] .cute-float:nth-child(10) { top: 80%; right: 5%; animation-duration: 18s; animation-delay: -7s; }
+[data-theme="pink"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 20s; animation-delay: -11s; }
+[data-theme="pink"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 16s; animation-delay: -15s; }
+
+/* OCEAN THEME - Fish & Marine */
+[data-theme="ocean"] .cute-float {
+    opacity: 0.35;
+    animation: cuteFloat 19s infinite alternate ease-in-out;
+}
+[data-theme="ocean"] .cute-float:nth-child(1) { top: 3%; left: 2%; animation-duration: 21s; animation-delay: 0s; }
+[data-theme="ocean"] .cute-float:nth-child(2) { top: 12%; right: 4%; animation-duration: 23s; animation-delay: -5s; }
+[data-theme="ocean"] .cute-float:nth-child(3) { bottom: 8%; left: 5%; animation-duration: 25s; animation-delay: -10s; }
+[data-theme="ocean"] .cute-float:nth-child(4) { bottom: 15%; right: 3%; animation-duration: 22s; animation-delay: -15s; }
+[data-theme="ocean"] .cute-float:nth-child(5) { top: 40%; left: 1%; animation-duration: 27s; animation-delay: -2s; }
+[data-theme="ocean"] .cute-float:nth-child(6) { top: 28%; right: 1%; animation-duration: 24s; animation-delay: -7s; }
+[data-theme="ocean"] .cute-float:nth-child(7) { top: 55%; left: 8%; animation-duration: 26s; animation-delay: -12s; }
+[data-theme="ocean"] .cute-float:nth-child(8) { bottom: 25%; right: 7%; animation-duration: 20s; animation-delay: -17s; }
+[data-theme="ocean"] .cute-float:nth-child(9) { top: 70%; left: 2%; animation-duration: 28s; animation-delay: -4s; }
+[data-theme="ocean"] .cute-float:nth-child(10) { top: 80%; right: 5%; animation-duration: 21s; animation-delay: -9s; }
+[data-theme="ocean"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 23s; animation-delay: -14s; }
+[data-theme="ocean"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 19s; animation-delay: -19s; }
+
+/* FOREST THEME - Trees & Animals */
+[data-theme="forest"] .cute-float {
+    opacity: 0.35;
+    animation: cuteFloat 17s infinite alternate ease-in-out;
+}
+[data-theme="forest"] .cute-float:nth-child(1) { top: 3%; left: 2%; animation-duration: 19s; animation-delay: 0s; }
+[data-theme="forest"] .cute-float:nth-child(2) { top: 12%; right: 4%; animation-duration: 21s; animation-delay: -4s; }
+[data-theme="forest"] .cute-float:nth-child(3) { bottom: 8%; left: 5%; animation-duration: 23s; animation-delay: -8s; }
+[data-theme="forest"] .cute-float:nth-child(4) { bottom: 15%; right: 3%; animation-duration: 20s; animation-delay: -12s; }
+[data-theme="forest"] .cute-float:nth-child(5) { top: 40%; left: 1%; animation-duration: 25s; animation-delay: -2s; }
+[data-theme="forest"] .cute-float:nth-child(6) { top: 28%; right: 1%; animation-duration: 22s; animation-delay: -6s; }
+[data-theme="forest"] .cute-float:nth-child(7) { top: 55%; left: 8%; animation-duration: 24s; animation-delay: -10s; }
+[data-theme="forest"] .cute-float:nth-child(8) { bottom: 25%; right: 7%; animation-duration: 18s; animation-delay: -14s; }
+[data-theme="forest"] .cute-float:nth-child(9) { top: 70%; left: 2%; animation-duration: 26s; animation-delay: -3s; }
+[data-theme="forest"] .cute-float:nth-child(10) { top: 80%; right: 5%; animation-duration: 19s; animation-delay: -7s; }
+[data-theme="forest"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 21s; animation-delay: -11s; }
+[data-theme="forest"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 17s; animation-delay: -15s; }
+
+/* SUNSET THEME - Tropical */
+[data-theme="sunset"] .cute-float {
+    opacity: 0.35;
+    animation: cuteFloat 18s infinite alternate ease-in-out;
+}
+[data-theme="sunset"] .cute-float:nth-child(1) { top: 3%; left: 2%; animation-duration: 20s; animation-delay: 0s; }
+[data-theme="sunset"] .cute-float:nth-child(2) { top: 12%; right: 4%; animation-duration: 22s; animation-delay: -4s; }
+[data-theme="sunset"] .cute-float:nth-child(3) { bottom: 8%; left: 5%; animation-duration: 24s; animation-delay: -8s; }
+[data-theme="sunset"] .cute-float:nth-child(4) { bottom: 15%; right: 3%; animation-duration: 21s; animation-delay: -12s; }
+[data-theme="sunset"] .cute-float:nth-child(5) { top: 40%; left: 1%; animation-duration: 26s; animation-delay: -2s; }
+[data-theme="sunset"] .cute-float:nth-child(6) { top: 28%; right: 1%; animation-duration: 23s; animation-delay: -6s; }
+[data-theme="sunset"] .cute-float:nth-child(7) { top: 55%; left: 8%; animation-duration: 25s; animation-delay: -10s; }
+[data-theme="sunset"] .cute-float:nth-child(8) { bottom: 25%; right: 7%; animation-duration: 19s; animation-delay: -14s; }
+[data-theme="sunset"] .cute-float:nth-child(9) { top: 70%; left: 2%; animation-duration: 27s; animation-delay: -3s; }
+[data-theme="sunset"] .cute-float:nth-child(10) { top: 80%; right: 5%; animation-duration: 20s; animation-delay: -7s; }
+[data-theme="sunset"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 22s; animation-delay: -11s; }
+[data-theme="sunset"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 18s; animation-delay: -15s; }
+
+/* LAVENDER THEME - Dreamy */
+[data-theme="lavender"] .cute-float {
+    opacity: 0.35;
+    animation: cuteFloat 17s infinite alternate ease-in-out;
+}
+[data-theme="lavender"] .cute-float:nth-child(1) { top: 3%; left: 2%; animation-duration: 19s; animation-delay: 0s; }
+[data-theme="lavender"] .cute-float:nth-child(2) { top: 12%; right: 4%; animation-duration: 21s; animation-delay: -5s; }
+[data-theme="lavender"] .cute-float:nth-child(3) { bottom: 8%; left: 5%; animation-duration: 23s; animation-delay: -10s; }
+[data-theme="lavender"] .cute-float:nth-child(4) { bottom: 15%; right: 3%; animation-duration: 20s; animation-delay: -15s; }
+[data-theme="lavender"] .cute-float:nth-child(5) { top: 40%; left: 1%; animation-duration: 25s; animation-delay: -2s; }
+[data-theme="lavender"] .cute-float:nth-child(6) { top: 28%; right: 1%; animation-duration: 22s; animation-delay: -7s; }
+[data-theme="lavender"] .cute-float:nth-child(7) { top: 55%; left: 8%; animation-duration: 24s; animation-delay: -12s; }
+[data-theme="lavender"] .cute-float:nth-child(8) { bottom: 25%; right: 7%; animation-duration: 18s; animation-delay: -17s; }
+[data-theme="lavender"] .cute-float:nth-child(9) { top: 70%; left: 2%; animation-duration: 26s; animation-delay: -4s; }
+[data-theme="lavender"] .cute-float:nth-child(10) { top: 80%; right: 5%; animation-duration: 19s; animation-delay: -9s; }
+[data-theme="lavender"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 21s; animation-delay: -14s; }
+[data-theme="lavender"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 17s; animation-delay: -19s; }
+
+/* GOLDEN THEME - Luxurious */
+[data-theme="golden"] .cute-float {
+    opacity: 0.35;
+    animation: cuteFloat 18s infinite alternate ease-in-out;
+}
+[data-theme="golden"] .cute-float:nth-child(1) { top: 3%; left: 2%; animation-duration: 20s; animation-delay: 0s; }
+[data-theme="golden"] .cute-float:nth-child(2) { top: 12%; right: 4%; animation-duration: 22s; animation-delay: -4s; }
+[data-theme="golden"] .cute-float:nth-child(3) { bottom: 8%; left: 5%; animation-duration: 24s; animation-delay: -8s; }
+[data-theme="golden"] .cute-float:nth-child(4) { bottom: 15%; right: 3%; animation-duration: 21s; animation-delay: -12s; }
+[data-theme="golden"] .cute-float:nth-child(5) { top: 40%; left: 1%; animation-duration: 26s; animation-delay: -2s; }
+[data-theme="golden"] .cute-float:nth-child(6) { top: 28%; right: 1%; animation-duration: 23s; animation-delay: -6s; }
+[data-theme="golden"] .cute-float:nth-child(7) { top: 55%; left: 8%; animation-duration: 25s; animation-delay: -10s; }
+[data-theme="golden"] .cute-float:nth-child(8) { bottom: 25%; right: 7%; animation-duration: 19s; animation-delay: -14s; }
+[data-theme="golden"] .cute-float:nth-child(9) { top: 70%; left: 2%; animation-duration: 27s; animation-delay: -3s; }
+[data-theme="golden"] .cute-float:nth-child(10) { top: 80%; right: 5%; animation-duration: 20s; animation-delay: -7s; }
+[data-theme="golden"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 22s; animation-delay: -11s; }
+[data-theme="golden"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 18s; animation-delay: -15s; }
 
 @keyframes cuteFloat {
     0% { transform: translate(0,0) rotate(0deg) scale(1); }
@@ -1039,18 +1133,43 @@ body {
         }
     })();
 
+    // ============================================================
+    // FLOATING EMOJIS UPDATE - THEME BASED
+    // ============================================================
+    function updateFloatingEmojis(theme) {
+        const floats = document.querySelectorAll('.cute-float');
+        const emojiSets = {
+            default: ['⭐', '✨', '🚀', '💫', '🌟', '🔥', '🌈', '🌙', '☀️', '🌠', '💎', '🌌'],
+            pink: ['🐻', '🐱', '🎀', '🌸', '🐾', '💖', '🦋', '💗', '🎀', '💕', '🌺', '🩷'],
+            ocean: ['🐠', '🌊', '🐚', '⛵', '🐟', '🌅', '🐙', '🪸', '🐬', '🌊', '🐳', '⚓'],
+            forest: ['🌿', '🌳', '🍃', '🌺', '🦋', '🌲', '🍄', '🌼', '🐿️', '🍂', '🌾', '🍁'],
+            sunset: ['🌅', '☀️', '🌴', '🌺', '🏖️', '🌞', '🌊', '🦩', '🍹', '🌄', '🌺', '🌟'],
+            lavender: ['💜', '✨', '🌙', '🌸', '🦋', '🌟', '🌺', '💫', '🌷', '🪄', '💎', '🌙'],
+            golden: ['🌟', '✨', '💛', '👑', '🌞', '🏆', '⭐', '💫', '🌠', '💎', '🌟', '✨']
+        };
+        
+        const emojis = emojiSets[theme] || emojiSets.default;
+        floats.forEach((el, index) => {
+            if (index < emojis.length) {
+                el.textContent = emojis[index];
+            }
+        });
+    }
+
     // --- Theme Switcher ---
     function setTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('galtyss-theme', theme);
         document.querySelectorAll('.theme-dot').forEach(dot => dot.classList.remove('active'));
         document.querySelector(`.theme-dot.${theme}`).classList.add('active');
+        updateFloatingEmojis(theme);
     }
 
     // --- Load saved theme ---
     document.addEventListener('DOMContentLoaded', function() {
         const saved = localStorage.getItem('galtyss-theme') || 'default';
         setTheme(saved);
+        updateFloatingEmojis(saved);
     });
 </script>
 
