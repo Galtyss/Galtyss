@@ -738,6 +738,70 @@ body {
 .btn-instagram:hover { transform: translateY(-6px) scale(1.05); box-shadow: 0 20px 60px rgba(214,36,159,0.5); }
 
 /* ============================================================
+   CONTACT & JOIN SECTION (NEW)
+   ============================================================ */
+.contact-join-section {
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+    text-align: center;
+}
+.contact-join-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.contact-join-section .sub-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+.contact-join-section .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.contact-join-section .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.8rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 60px;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+.contact-join-section .contact-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 8px 30px var(--btn-shadow);
+}
+.contact-join-section .contact-item i {
+    font-size: 1.6rem;
+}
+.contact-join-section .contact-item .fab.fa-instagram {
+    color: #e1306c;
+}
+.contact-join-section .contact-item .fas.fa-envelope {
+    color: #4facfe;
+}
+.contact-join-section .contact-item .label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+.contact-join-section .contact-item .detail {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .footer {
@@ -770,7 +834,7 @@ body {
 .back-top:hover { background: var(--bg-card); border-color: var(--accent-blue); color: var(--text-primary); }
 
 /* ============================================================
-   FLOATING CUTE OBJECTS (FIXED - SPREAD OUT)
+   FLOATING CUTE OBJECTS (SPREAD OUT - ALL THEMES)
    ============================================================ */
 .cute-float {
     position: fixed;
@@ -781,7 +845,6 @@ body {
     transition: opacity 1.5s ease;
 }
 
-/* DEFAULT THEME - Stars & Sparkles */
 [data-theme="default"] .cute-float {
     opacity: 0.35;
     animation: cuteFloat 18s infinite alternate ease-in-out;
@@ -799,7 +862,6 @@ body {
 [data-theme="default"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 22s; animation-delay: -10s; }
 [data-theme="default"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 18s; animation-delay: -13s; }
 
-/* PINK THEME - Teddy Bears & Cute Stuff */
 [data-theme="pink"] .cute-float {
     opacity: 0.4;
     animation: cuteFloat 16s infinite alternate ease-in-out;
@@ -817,7 +879,6 @@ body {
 [data-theme="pink"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 20s; animation-delay: -11s; }
 [data-theme="pink"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 16s; animation-delay: -15s; }
 
-/* OCEAN THEME - Fish & Marine */
 [data-theme="ocean"] .cute-float {
     opacity: 0.35;
     animation: cuteFloat 19s infinite alternate ease-in-out;
@@ -835,7 +896,6 @@ body {
 [data-theme="ocean"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 23s; animation-delay: -14s; }
 [data-theme="ocean"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 19s; animation-delay: -19s; }
 
-/* FOREST THEME - Trees & Animals */
 [data-theme="forest"] .cute-float {
     opacity: 0.35;
     animation: cuteFloat 17s infinite alternate ease-in-out;
@@ -853,7 +913,6 @@ body {
 [data-theme="forest"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 21s; animation-delay: -11s; }
 [data-theme="forest"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 17s; animation-delay: -15s; }
 
-/* SUNSET THEME - Tropical */
 [data-theme="sunset"] .cute-float {
     opacity: 0.35;
     animation: cuteFloat 18s infinite alternate ease-in-out;
@@ -871,7 +930,6 @@ body {
 [data-theme="sunset"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 22s; animation-delay: -11s; }
 [data-theme="sunset"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 18s; animation-delay: -15s; }
 
-/* LAVENDER THEME - Dreamy */
 [data-theme="lavender"] .cute-float {
     opacity: 0.35;
     animation: cuteFloat 17s infinite alternate ease-in-out;
@@ -889,7 +947,6 @@ body {
 [data-theme="lavender"] .cute-float:nth-child(11) { bottom: 40%; left: 10%; animation-duration: 21s; animation-delay: -14s; }
 [data-theme="lavender"] .cute-float:nth-child(12) { bottom: 50%; right: 9%; animation-duration: 17s; animation-delay: -19s; }
 
-/* GOLDEN THEME - Luxurious */
 [data-theme="golden"] .cute-float {
     opacity: 0.35;
     animation: cuteFloat 18s infinite alternate ease-in-out;
@@ -929,12 +986,15 @@ body {
     .theme-picker { flex-wrap: wrap; justify-content: center; }
     .theme-dot { width: 20px; height: 20px; }
     .disclaimer-box { border-radius: 30px; padding: 1rem 1.5rem; }
+    .contact-join-section .contact-links { flex-direction: column; align-items: center; }
+    .contact-join-section .contact-item { width: 100%; max-width: 350px; justify-content: center; }
 }
 @media (max-width: 480px) {
     .main-content { padding: 0 1rem 2rem; }
     .hero h1 { font-size: 3.2rem; }
     .mentor-card { padding: 1.5rem; }
     .skill-tag { font-size: 0.7rem; padding: 0.3rem 0.7rem; }
+    .contact-join-section h2 { font-size: 1.8rem; }
 }
 </style>
 </head>
@@ -1000,9 +1060,8 @@ body {
         <h2>🌟 Meet Your 3 Senior Mentors</h2>
         <div class="mentors-grid">
 
-            <!-- ===== GREAT HORNED OWL (SAHIL) ===== -->
+            <!-- ===== GREAT HORNED OWL ===== -->
             <div class="mentor-card card-sahil">
-                <!-- 🔴🔴🔴 BACKGROUND IMAGE FOR GREAT HORNED OWL 🔴🔴🔴 -->
                 <div class="card-bg-image" style="background-image: url('greathornowlbg.jpeg');"></div>
                 <div class="card-bg-overlay"></div>
                 <div class="card-content">
@@ -1024,9 +1083,8 @@ body {
                 </div>
             </div>
 
-            <!-- ===== RAZORBILL (MANISH) ===== -->
+            <!-- ===== RAZORBILL ===== -->
             <div class="mentor-card card-manish">
-                <!-- 🔴🔴🔴 BACKGROUND IMAGE FOR RAZORBILL 🔴🔴🔴 -->
                 <div class="card-bg-image" style="background-image: url('razirbillbg.jpeg');"></div>
                 <div class="card-bg-overlay"></div>
                 <div class="card-content">
@@ -1048,9 +1106,8 @@ body {
                 </div>
             </div>
 
-            <!-- ===== SHOEBILL (PARTH) ===== -->
+            <!-- ===== SHOEBILL ===== -->
             <div class="mentor-card card-parth">
-                <!-- 🔴🔴🔴 BACKGROUND IMAGE FOR SHOEBILL 🔴🔴🔴 -->
                 <div class="card-bg-image" style="background-image: url('shoebillbg.jpg');"></div>
                 <div class="card-bg-overlay"></div>
                 <div class="card-content">
@@ -1072,6 +1129,29 @@ body {
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CONTACT & JOIN SECTION (NEW)
+    ============================================================ -->
+    <section class="contact-join-section" id="contact-join">
+        <h2>📬 Get in Touch</h2>
+        <p class="sub-text">
+            <i class="fas fa-handshake" style="color: var(--accent-gold);"></i> 
+            If you want to <strong>join GALTYSS</strong> as a mentor or student, or have any questions, reach out to us!
+        </p>
+        <div class="contact-links">
+            <a href="https://instagram.com/GALTYSS" target="_blank" class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <span class="label">Instagram</span>
+                <span class="detail">@GALTYSS</span>
+            </a>
+            <a href="mailto:galtysseniors@gmail.com?subject=Join%20GALTYSS" class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span class="label">Email</span>
+                <span class="detail">galtysseniors@gmail.com</span>
+            </a>
         </div>
     </section>
 
@@ -1133,9 +1213,7 @@ body {
         }
     })();
 
-    // ============================================================
-    // FLOATING EMOJIS UPDATE - THEME BASED
-    // ============================================================
+    // --- Update Floating Emojis based on theme ---
     function updateFloatingEmojis(theme) {
         const floats = document.querySelectorAll('.cute-float');
         const emojiSets = {
