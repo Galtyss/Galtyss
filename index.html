@@ -488,12 +488,67 @@ body {
 }
 
 /* ============================================================
-   MENTORS SECTION (Home Page)
+   QUOTE SECTION (RANDOM QUOTES)
+   ============================================================ */
+.quote-section {
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 1rem;
+}
+.quote-section .quote-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+.quote-section .quote-box:hover {
+    border-color: var(--accent-blue);
+}
+.quote-section .quote-box i {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+.quote-section .quote-box .quote-text {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+.quote-section .quote-box .quote-author {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   VISITOR COUNTER
+   ============================================================ */
+.visitor-counter {
+    text-align: center;
+    padding: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+.visitor-counter i {
+    color: var(--accent-blue);
+    margin-right: 0.3rem;
+}
+.visitor-counter span {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* ============================================================
+   MENTORS SECTION
    ============================================================ */
 .mentors-section {
     padding: 3rem 0 4rem;
     border-top: 1px solid var(--border-color);
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .mentors-section h2 {
     text-align: center;
@@ -822,11 +877,13 @@ body {
 }
 
 /* ============================================================
-   PAGE: PRIVACY POLICY
+   PAGE: PRIVACY POLICY (FIXED ALIGNMENT)
    ============================================================ */
 .policy-section {
     padding: 4rem 2rem;
     min-height: 70vh;
+    max-width: 900px;
+    margin: 0 auto;
 }
 .policy-section h1 {
     font-size: 3rem;
@@ -840,7 +897,7 @@ body {
     color: var(--text-secondary);
     font-size: 1.05rem;
     line-height: 2;
-    max-width: 850px;
+    max-width: 100%;
     margin-bottom: 1rem;
 }
 .policy-section h2 {
@@ -854,7 +911,7 @@ body {
     color: var(--text-secondary);
     font-size: 1.05rem;
     line-height: 2;
-    max-width: 850px;
+    max-width: 100%;
 }
 .policy-section ul li::before {
     content: "▸ ";
@@ -862,11 +919,13 @@ body {
 }
 
 /* ============================================================
-   PAGE: TERMS & CONDITIONS
+   PAGE: TERMS & CONDITIONS (FIXED ALIGNMENT)
    ============================================================ */
 .terms-section {
     padding: 4rem 2rem;
     min-height: 70vh;
+    max-width: 900px;
+    margin: 0 auto;
 }
 .terms-section h1 {
     font-size: 3rem;
@@ -880,7 +939,7 @@ body {
     color: var(--text-secondary);
     font-size: 1.05rem;
     line-height: 2;
-    max-width: 850px;
+    max-width: 100%;
     margin-bottom: 1rem;
 }
 .terms-section h2 {
@@ -894,7 +953,7 @@ body {
     color: var(--text-secondary);
     font-size: 1.05rem;
     line-height: 2;
-    max-width: 850px;
+    max-width: 100%;
 }
 .terms-section ul li::before {
     content: "▸ ";
@@ -1220,6 +1279,7 @@ body {
     .contact-join-section .contact-item { width: 100%; max-width: 350px; justify-content: center; }
     .about-section h1, .contact-section h1, .policy-section h1, .terms-section h1 { font-size: 2.2rem; }
     .footer .footer-links { gap: 1rem; }
+    .policy-section, .terms-section { padding: 2rem 1.2rem; }
 }
 @media (max-width: 480px) {
     .main-content { padding: 0 1rem 2rem; }
@@ -1229,9 +1289,11 @@ body {
     .contact-join-section h2 { font-size: 1.8rem; }
     .about-section { padding: 2rem 1rem; }
     .contact-section { padding: 2rem 1rem; }
-    .policy-section { padding: 2rem 1rem; }
-    .terms-section { padding: 2rem 1rem; }
+    .policy-section { padding: 1.5rem 1rem; }
+    .terms-section { padding: 1.5rem 1rem; }
     .footer .footer-links { flex-direction: column; gap: 0.5rem; }
+    .policy-section h1, .terms-section h1 { font-size: 1.8rem; }
+    .policy-section h2, .terms-section h2 { font-size: 1.2rem; }
 }
 </style>
 </head>
@@ -1288,6 +1350,11 @@ body {
     ============================================================ -->
     <div class="page active" id="page-home">
 
+        <!-- VISITOR COUNTER -->
+        <div class="visitor-counter">
+            <i class="fas fa-eye"></i> <span id="visitorCount">0</span> people visited GALTYSS
+        </div>
+
         <!-- HERO -->
         <section class="hero" id="home">
             <h1>GALTYSS</h1>
@@ -1300,6 +1367,15 @@ body {
                 <div class="mouse"><div class="wheel"></div></div>
                 <div class="arrow">⌄</div>
                 <span style="font-size:0.8rem;color:var(--text-secondary);margin-top:4px;">Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- RANDOM QUOTE SECTION -->
+        <section class="quote-section">
+            <div class="quote-box">
+                <i class="fas fa-quote-left"></i>
+                <div class="quote-text" id="dailyQuote">"Education is the most powerful weapon which you can use to change the world."</div>
+                <div class="quote-author">— Nelson Mandela</div>
             </div>
         </section>
 
@@ -1500,7 +1576,7 @@ body {
                 <li>To analyze website usage and improve user experience.</li>
             </ul>
 
-            <h>3. Data Sharing</h2>
+            <h2>3. Data Sharing</h2>
             <ul>
                 <li>We do not sell, trade, or rent your personal information to third parties.</li>
                 <li>We may share data with trusted partners who help us operate our website, under strict confidentiality agreements.</li>
@@ -1645,6 +1721,32 @@ body {
         }
     })();
 
+    // --- Random Quote Function ---
+    const quotes = [
+        { text: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela" },
+        { text: "The beautiful thing about learning is that nobody can take it away from you.", author: "B.B. King" },
+        { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+        { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+        { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+        { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+        { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
+        { text: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+        { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+        { text: "Education is not preparation for life; education is life itself.", author: "John Dewey" },
+        { text: "The mind is not a vessel to be filled, but a fire to be kindled.", author: "Plutarch" },
+        { text: "Learning is not attained by chance, it must be sought for with ardor and attended to with diligence.", author: "Abigail Adams" },
+        { text: "The more that you read, the more things you will know. The more that you learn, the more places you'll go.", author: "Dr. Seuss" },
+        { text: "Live as if you were to die tomorrow. Learn as if you were to live forever.", author: "Mahatma Gandhi" },
+        { text: "Knowledge is power. Information is liberating. Education is the premise of progress, in every society, in every family.", author: "Kofi Annan" }
+    ];
+
+    function setRandomQuote() {
+        const idx = Math.floor(Math.random() * quotes.length);
+        const q = quotes[idx];
+        document.getElementById('dailyQuote').textContent = '"' + q.text + '"';
+        document.querySelector('.quote-box .quote-author').textContent = '— ' + q.author;
+    }
+
     // --- Page Navigation ---
     function showPage(page) {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1682,11 +1784,24 @@ body {
         updateFloatingEmojis(theme);
     }
 
+    // --- Visitor Counter ---
+    function updateVisitorCounter() {
+        let count = localStorage.getItem('galtyss_visitors');
+        if (!count) {
+            count = 0;
+        }
+        count = parseInt(count) + 1;
+        localStorage.setItem('galtyss_visitors', count);
+        document.getElementById('visitorCount').textContent = count;
+    }
+
     // --- Load saved theme ---
     document.addEventListener('DOMContentLoaded', function() {
-        const saved = localStorage.getItem('galtyss-theme') || 'default';
-        setTheme(saved);
-        updateFloatingEmojis(saved);
+        const savedTheme = localStorage.getItem('galtyss-theme') || 'default';
+        setTheme(savedTheme);
+        updateFloatingEmojis(savedTheme);
+        setRandomQuote();
+        updateVisitorCounter();
     });
 </script>
 
